@@ -1,9 +1,4 @@
-require 'date'
-require 'json'
-require 'logger'
-require 'tempfile'
-require 'typhoeus'
-require 'uri'
+require 'oauth2'
 
 module SmartRecruiters
   class Authorization

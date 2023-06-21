@@ -1,5 +1,5 @@
 module SmartRecruiters
-  class ApplicationAPIApi
+  class ApplicationApi
     attr_accessor :api_client
 
     def initialize(api_client = ApiClient.default)
@@ -22,15 +22,15 @@ module SmartRecruiters
     # @return [Array<(ApplyApiResponse, Integer, Hash)>] ApplyApiResponse data, response status code and response headers
     def create_candidate_with_http_info(body, uuid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ApplicationAPIApi.create_candidate ...'
+        @api_client.config.logger.debug 'Calling API: ApplicationApi.create_candidate ...'
       end
       # verify the required parameter 'body' is set
       if @api_client.config.client_side_validation && body.nil?
-        fail ArgumentError, "Missing the required parameter 'body' when calling ApplicationAPIApi.create_candidate"
+        fail ArgumentError, "Missing the required parameter 'body' when calling ApplicationApi.create_candidate"
       end
       # verify the required parameter 'uuid' is set
       if @api_client.config.client_side_validation && uuid.nil?
-        fail ArgumentError, "Missing the required parameter 'uuid' when calling ApplicationAPIApi.create_candidate"
+        fail ArgumentError, "Missing the required parameter 'uuid' when calling ApplicationApi.create_candidate"
       end
       # resource path
       local_var_path = '/postings/{uuid}/candidates'.sub('{' + 'uuid' + '}', uuid.to_s)
@@ -63,7 +63,7 @@ module SmartRecruiters
         :return_type => return_type)
 
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ApplicationAPIApi#create_candidate\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ApplicationApi#create_candidate\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -84,15 +84,15 @@ module SmartRecruiters
     # @return [Array<(ApplicationStatusInfo, Integer, Hash)>] ApplicationStatusInfo data, response status code and response headers
     def get_application_status_with_http_info(uuid, candidate_id, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ApplicationAPIApi.get_application_status ...'
+        @api_client.config.logger.debug 'Calling API: ApplicationApi.get_application_status ...'
       end
       # verify the required parameter 'uuid' is set
       if @api_client.config.client_side_validation && uuid.nil?
-        fail ArgumentError, "Missing the required parameter 'uuid' when calling ApplicationAPIApi.get_application_status"
+        fail ArgumentError, "Missing the required parameter 'uuid' when calling ApplicationApi.get_application_status"
       end
       # verify the required parameter 'candidate_id' is set
       if @api_client.config.client_side_validation && candidate_id.nil?
-        fail ArgumentError, "Missing the required parameter 'candidate_id' when calling ApplicationAPIApi.get_application_status"
+        fail ArgumentError, "Missing the required parameter 'candidate_id' when calling ApplicationApi.get_application_status"
       end
       # resource path
       local_var_path = '/postings/{uuid}/candidates/{candidateId}/status'.sub('{' + 'uuid' + '}', uuid.to_s).sub('{' + 'candidateId' + '}', candidate_id.to_s)
@@ -123,7 +123,7 @@ module SmartRecruiters
         :return_type => return_type)
 
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ApplicationAPIApi#get_application_status\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ApplicationApi#get_application_status\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -144,11 +144,11 @@ module SmartRecruiters
     # @return [Array<(ApplyConfiguration, Integer, Hash)>] ApplyConfiguration data, response status code and response headers
     def get_apply_configuration_for_posting_with_http_info(uuid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ApplicationAPIApi.get_apply_configuration_for_posting ...'
+        @api_client.config.logger.debug 'Calling API: ApplicationApi.get_apply_configuration_for_posting ...'
       end
       # verify the required parameter 'uuid' is set
       if @api_client.config.client_side_validation && uuid.nil?
-        fail ArgumentError, "Missing the required parameter 'uuid' when calling ApplicationAPIApi.get_apply_configuration_for_posting"
+        fail ArgumentError, "Missing the required parameter 'uuid' when calling ApplicationApi.get_apply_configuration_for_posting"
       end
       # resource path
       local_var_path = '/postings/{uuid}/configuration'.sub('{' + 'uuid' + '}', uuid.to_s)
@@ -180,7 +180,7 @@ module SmartRecruiters
         :return_type => return_type)
 
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ApplicationAPIApi#get_apply_configuration_for_posting\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: ApplicationApi#get_apply_configuration_for_posting\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

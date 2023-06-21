@@ -3,6 +3,7 @@ require 'smart_recruiters/api_client'
 require 'smart_recruiters/api_error'
 require 'smart_recruiters/version'
 require 'smart_recruiters/configuration'
+require 'smart_recruiters/authorization'
 
 # Models
 require 'smart_recruiters/models/answer_record'
@@ -25,7 +26,7 @@ require 'smart_recruiters/models/source_details'
 require 'smart_recruiters/models/web'
 
 # APIs
-require 'smart_recruiters/api/application_api_api'
+require 'smart_recruiters/api/application_api'
 
 module SmartRecruiters
   class << self
