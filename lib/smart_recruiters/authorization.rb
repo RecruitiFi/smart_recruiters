@@ -26,7 +26,7 @@ module SmartRecruiters
     end
 
     def build_authorize_url
-      authorize_url = client.auth_code.authorize_url
+      authorize_url = oauth_client.auth_code.authorize_url
 
       unless @config.scopes.length.zero?
         authorize_url += "&scope=" + @config.scopes.join("%20")
