@@ -3,7 +3,7 @@
 require_relative "lib/smart_recruiters/version"
 
 Gem::Specification.new do |spec|
-  spec.name = "smart_recruiters"
+  spec.name = "open_api_smart_recruiters_sdk"
   spec.version = SmartRecruiters::VERSION
   spec.authors = ["OneNeptune"]
   spec.email = ["5749451+OneNeptune@users.noreply.github.com"]
