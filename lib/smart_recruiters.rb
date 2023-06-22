@@ -6,27 +6,10 @@ require 'smart_recruiters/configuration'
 require 'smart_recruiters/authorization'
 
 # Models
-require 'smart_recruiters/models/answer_record'
-require 'smart_recruiters/models/application_status_info'
-require 'smart_recruiters/models/apply_api_error'
-require 'smart_recruiters/models/apply_api_request'
-require 'smart_recruiters/models/apply_api_response'
-require 'smart_recruiters/models/apply_configuration'
-require 'smart_recruiters/models/apply_settings'
-require 'smart_recruiters/models/attachment'
-require 'smart_recruiters/models/education'
-require 'smart_recruiters/models/employment'
-require 'smart_recruiters/models/field_value'
-require 'smart_recruiters/models/location'
-require 'smart_recruiters/models/privacy_policy'
-require 'smart_recruiters/models/screening_question'
-require 'smart_recruiters/models/screening_question_answer'
-require 'smart_recruiters/models/screening_question_field'
-require 'smart_recruiters/models/source_details'
-require 'smart_recruiters/models/web'
+Dir[File.join(__dir__, 'smart_recruiters/models', '*.rb')].each { |file| require file }
 
 # APIs
-require 'smart_recruiters/api/application_api'
+Dir[File.join(__dir__, 'smart_recruiters/api', '*.rb')].each { |file| require file }
 
 module SmartRecruiters
   class << self

@@ -132,7 +132,7 @@ module SmartRecruiters
     def initialize
       @scheme = 'https'
       @host = 'api.smartrecruiters.com'
-      @base_path = 'https://api.smartrecruiters.com'
+      @base_path = ''
       @api_key = {}
       @api_key_prefix = {}
       @client_id = nil
