@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
 
   spec.summary = "A SmartRecruiters API SDK for Ruby."
   spec.description = "A SmartRecruiters API SDK for Ruby."
-  spec.homepage = "https://github.com/OneNeptune/smart_recruiters"
+  spec.homepage = "https://github.com/RecruitiFi/smart_recruiters"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.6.0"
 
