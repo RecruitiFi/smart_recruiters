@@ -53,9 +53,19 @@ module SmartRecruiters
         }
       )
 
-      token.refresh!({ client_id: config.client_id, client_secret: config.client_secret }) if token.expired?
+      if token.expired?
+        token.refresh!({ client_id: config.client_id, client_secret: config.client_secret })
+  
+        load_token(token)
+      end
 
       token
+    end
+
+    def load_token(token)
+      SmartRecruiters::Configuration.default.access_token = token.token
+      SmartRecruiters::Configuration.default.token_expires_at = token.expires_at
+      SmartRecruiters::Configuration.default.refresh_token = token.refresh_token
     end
   end
 end

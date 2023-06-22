@@ -17,9 +17,8 @@ module SmartRecruiters
 
     # Initializes the ApiClient
     # @option config [Configuration] Configuration for initializing the object, default to Configuration.default
-    def initialize(access_token, config = Configuration.default)
+    def initialize(config = Configuration.default)
       @config = config
-      @config.access_token = access_token
       @user_agent = "SmartRecruiters/#{VERSION}/ruby"
       @default_headers = {
         'Content-Type' => 'application/json',
