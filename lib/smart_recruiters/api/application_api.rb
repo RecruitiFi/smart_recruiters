@@ -53,7 +53,7 @@ module SmartRecruiters
 
       return_type = opts[:return_type] || 'ApplyApiResponse' 
 
-      auth_names = opts[:auth_names] || ['key']
+      auth_names = opts[:auth_names] || ['key', 'oauth']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -113,7 +113,7 @@ module SmartRecruiters
 
       return_type = opts[:return_type] || 'ApplicationStatusInfo' 
 
-      auth_names = opts[:auth_names] || ['key']
+      auth_names = opts[:auth_names] || ['key', 'oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -170,7 +170,7 @@ module SmartRecruiters
 
       return_type = opts[:return_type] || 'ApplyConfiguration' 
 
-      auth_names = opts[:auth_names] || ['key']
+      auth_names = opts[:auth_names] || ['key', 'oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
