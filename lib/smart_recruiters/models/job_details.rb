@@ -81,28 +81,28 @@ module SmartRecruiters
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'id' => :'',
-        :'title' => :'',
-        :'ref_number' => :'',
-        :'created_on' => :'',
-        :'updated_on' => :'',
-        :'last_activity_on' => :'',
-        :'department' => :'',
-        :'location' => :'',
-        :'status' => :'',
-        :'posting_status' => :'',
-        :'target_hiring_date' => :'',
-        :'industry' => :'',
-        :'function' => :'',
-        :'type_of_employment' => :'',
-        :'experience_level' => :'',
-        :'eeo_category' => :'',
-        :'template' => :'',
-        :'creator' => :'',
-        :'compensation' => :'',
-        :'job_ad' => :'',
-        :'properties' => :'',
-        :'actions' => :''
+        :'id' => :'Object',
+        :'title' => :'Object',
+        :'ref_number' => :'Object',
+        :'created_on' => :'Object',
+        :'updated_on' => :'Object',
+        :'last_activity_on' => :'Object',
+        :'department' => :'Object',
+        :'location' => :'Object',
+        :'status' => :'Object',
+        :'posting_status' => :'Object',
+        :'target_hiring_date' => :'Object',
+        :'industry' => :'Object',
+        :'function' => :'Object',
+        :'type_of_employment' => :'Object',
+        :'experience_level' => :'Object',
+        :'eeo_category' => :'Object',
+        :'template' => :'Object',
+        :'creator' => :'Object',
+        :'compensation' => :'Object',
+        :'job_ad' => :'Object',
+        :'properties' => :'Object',
+        :'actions' => :'Object'
       }
     end
 
@@ -128,7 +128,7 @@ module SmartRecruiters
       }
 
       # call parent's initialize
-      super(attributes)
+      # super(attributes)
 
       if attributes.key?(:'id')
         self.id = attributes[:'id']
@@ -287,7 +287,7 @@ module SmartRecruiters
     # @return [Object] Returns the model itself
     def build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
-      super(attributes)
+      # super(attributes)
       self.class.openapi_types.each_pair do |key, type|
         if type =~ /\AArray<(.*)>/i
           # check to ensure the input is an array given that the attribute
@@ -361,7 +361,7 @@ module SmartRecruiters
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = super
+      hash = {}
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         if value.nil?

@@ -46,7 +46,7 @@ module SmartRecruiters
       }
 
       # call parent's initialize
-      super(attributes)
+      # super(attributes)
 
       if attributes.key?(:'role')
         self.role = attributes[:'role']
@@ -108,7 +108,7 @@ module SmartRecruiters
     # @return [Object] Returns the model itself
     def build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
-      super(attributes)
+      # super(attributes)
       self.class.openapi_types.each_pair do |key, type|
         if type =~ /\AArray<(.*)>/i
           # check to ensure the input is an array given that the attribute
@@ -182,7 +182,7 @@ module SmartRecruiters
     # Returns the object in the form of hash
     # @return [Hash] Returns the object in the form of hash
     def to_hash
-      hash = super
+      hash = {}
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
         if value.nil?

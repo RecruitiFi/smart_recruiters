@@ -193,5 +193,6 @@ module SmartRecruiters
       else
         value
       end
-    end  end
+    end
+  end
 end
