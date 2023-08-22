@@ -57,7 +57,7 @@ module SmartRecruiters
       # http body (model)
       post_body = opts[:body] 
 
-      return_type = opts[:return_type] || 'MessagesView' 
+      return_type = opts[:return_type] || 'MessageView' 
 
       auth_names = opts[:auth_names] || ['key', 'oauth']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
