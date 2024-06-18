@@ -26,20 +26,20 @@ module SmartRecruiters
     # @return [Array<(ApplyApiResponse, Integer, Hash)>] ApplyApiResponse data, response status code and response headers
     def create_candidate_with_http_info(uuid, apply_api_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ApplicationAPIApi.create_candidate ...'
+        @api_client.config.logger.debug 'Calling API: PostingsApi.create_candidate ...'
       end
       # verify the required parameter 'uuid' is set
       if @api_client.config.client_side_validation && uuid.nil?
-        fail ArgumentError, "Missing the required parameter 'uuid' when calling ApplicationAPIApi.create_candidate"
+        fail ArgumentError, "Missing the required parameter 'uuid' when calling PostingsApi.create_candidate"
       end
       pattern = Regexp.new(/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/)
       if @api_client.config.client_side_validation && uuid !~ pattern
-        fail ArgumentError, "invalid value for 'uuid' when calling ApplicationAPIApi.create_candidate, must conform to the pattern #{pattern}."
+        fail ArgumentError, "invalid value for 'uuid' when calling PostingsApi.create_candidate, must conform to the pattern #{pattern}."
       end
 
       # verify the required parameter 'apply_api_request' is set
       if @api_client.config.client_side_validation && apply_api_request.nil?
-        fail ArgumentError, "Missing the required parameter 'apply_api_request' when calling ApplicationAPIApi.create_candidate"
+        fail ArgumentError, "Missing the required parameter 'apply_api_request' when calling PostingsApi.create_candidate"
       end
       # resource path
       local_var_path = '/postings/{uuid}/candidates'.sub('{' + 'uuid' + '}', CGI.escape(uuid.to_s))
@@ -67,10 +67,10 @@ module SmartRecruiters
       return_type = opts[:debug_return_type] || 'ApplyApiResponse'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['key']
+      auth_names = opts[:debug_auth_names] || ['smart_token']
 
       new_options = opts.merge(
-        :operation => :"ApplicationAPIApi.create_candidate",
+        :operation => :"PostingsApi.create_candidate",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -81,7 +81,7 @@ module SmartRecruiters
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ApplicationAPIApi#create_candidate\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: PostingsApi#create_candidate\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -103,20 +103,20 @@ module SmartRecruiters
     # @return [Array<(ApplicationStatusInfo, Integer, Hash)>] ApplicationStatusInfo data, response status code and response headers
     def get_application_status_with_http_info(uuid, candidate_id, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ApplicationAPIApi.get_application_status ...'
+        @api_client.config.logger.debug 'Calling API: PostingsApi.get_application_status ...'
       end
       # verify the required parameter 'uuid' is set
       if @api_client.config.client_side_validation && uuid.nil?
-        fail ArgumentError, "Missing the required parameter 'uuid' when calling ApplicationAPIApi.get_application_status"
+        fail ArgumentError, "Missing the required parameter 'uuid' when calling PostingsApi.get_application_status"
       end
       pattern = Regexp.new(/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/)
       if @api_client.config.client_side_validation && uuid !~ pattern
-        fail ArgumentError, "invalid value for 'uuid' when calling ApplicationAPIApi.get_application_status, must conform to the pattern #{pattern}."
+        fail ArgumentError, "invalid value for 'uuid' when calling PostingsApi.get_application_status, must conform to the pattern #{pattern}."
       end
 
       # verify the required parameter 'candidate_id' is set
       if @api_client.config.client_side_validation && candidate_id.nil?
-        fail ArgumentError, "Missing the required parameter 'candidate_id' when calling ApplicationAPIApi.get_application_status"
+        fail ArgumentError, "Missing the required parameter 'candidate_id' when calling PostingsApi.get_application_status"
       end
       # resource path
       local_var_path = '/postings/{uuid}/candidates/{candidateId}/status'.sub('{' + 'uuid' + '}', CGI.escape(uuid.to_s)).sub('{' + 'candidateId' + '}', CGI.escape(candidate_id.to_s))
@@ -139,10 +139,10 @@ module SmartRecruiters
       return_type = opts[:debug_return_type] || 'ApplicationStatusInfo'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['key']
+      auth_names = opts[:debug_auth_names] || ['smart_token']
 
       new_options = opts.merge(
-        :operation => :"ApplicationAPIApi.get_application_status",
+        :operation => :"PostingsApi.get_application_status",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -153,7 +153,7 @@ module SmartRecruiters
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ApplicationAPIApi#get_application_status\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: PostingsApi#get_application_status\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -179,15 +179,15 @@ module SmartRecruiters
     # @return [Array<(ApplyConfiguration, Integer, Hash)>] ApplyConfiguration data, response status code and response headers
     def get_apply_configuration_for_posting_with_http_info(uuid, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: ApplicationAPIApi.get_apply_configuration_for_posting ...'
+        @api_client.config.logger.debug 'Calling API: PostingsApi.get_apply_configuration_for_posting ...'
       end
       # verify the required parameter 'uuid' is set
       if @api_client.config.client_side_validation && uuid.nil?
-        fail ArgumentError, "Missing the required parameter 'uuid' when calling ApplicationAPIApi.get_apply_configuration_for_posting"
+        fail ArgumentError, "Missing the required parameter 'uuid' when calling PostingsApi.get_apply_configuration_for_posting"
       end
       pattern = Regexp.new(/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/)
       if @api_client.config.client_side_validation && uuid !~ pattern
-        fail ArgumentError, "invalid value for 'uuid' when calling ApplicationAPIApi.get_apply_configuration_for_posting, must conform to the pattern #{pattern}."
+        fail ArgumentError, "invalid value for 'uuid' when calling PostingsApi.get_apply_configuration_for_posting, must conform to the pattern #{pattern}."
       end
 
       # resource path
@@ -213,10 +213,10 @@ module SmartRecruiters
       return_type = opts[:debug_return_type] || 'ApplyConfiguration'
 
       # auth_names
-      auth_names = opts[:debug_auth_names] || ['key']
+      auth_names = opts[:debug_auth_names] || ['smart_token']
 
       new_options = opts.merge(
-        :operation => :"ApplicationAPIApi.get_apply_configuration_for_posting",
+        :operation => :"PostingsApi.get_apply_configuration_for_posting",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -227,7 +227,7 @@ module SmartRecruiters
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: ApplicationAPIApi#get_apply_configuration_for_posting\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: PostingsApi#get_apply_configuration_for_posting\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
