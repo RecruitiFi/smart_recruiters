@@ -208,6 +208,13 @@ module SmartRecruiters
             key: 'Authorization',
             value: "Bearer #{access_token}"
           },
+        'smart_token' =>
+          {
+            type: 'smart_token',
+            in: 'header',
+            key: 'X-SmartToken',
+            value: "DCRA1-#{api_key['smart_token']}"
+          },
       }
     end
   end
