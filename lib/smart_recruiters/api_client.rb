@@ -59,7 +59,9 @@ module SmartRecruiters
         end
       end
 
-      if opts[:return_type]
+      if opts[:return_type] == :raw
+        data = response.body
+      elsif opts[:return_type]
         data = deserialize(response, opts[:return_type])
       else
         data = nil
