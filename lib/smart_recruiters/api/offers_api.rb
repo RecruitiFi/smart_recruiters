@@ -1,6 +1,6 @@
 require 'cgi'
 
-module OpenapiClient
+module SmartRecruiters
   class OffersApi
     attr_accessor :api_client
 
